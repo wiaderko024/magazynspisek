@@ -4,17 +4,17 @@
     <div class="container">
         <div class="navbar-left">
             <button class="navbar-toggler" type="button">&#9776;</button>
-            <a class="navbar-brand" href="index.html">
-                <h3 class="logo-dark nav-logo" style="color: #323d47">magazynspisek.pl</h3>
+            <a class="navbar-brand" href="{% url 'home-page' %}">
+                <h3 class="logo-dark">magazynspisek.pl</h3>
                 <h3 class="logo-light">magazynspisek.pl</h3>
             </a>
         </div>
         <section class="navbar-mobile">
             <span class="navbar-divider d-mobile-none"></span>
             <nav class="nav nav-navbar">
-                <a class="nav-link" href="#">Strona główna</a>
+                <a class="nav-link" href="{% url 'home-page' %}">Strona główna</a>
                 <a class="nav-link" href="#">Artykuły</a>
-                <a class="nav-link" href="#">Autorzy</a>
+                <a class="nav-link" href="{% url 'authors-list' %}">Autorzy</a>
                 <a class="nav-link" href="#">O nas</a>
                 <a class="nav-link" href="#">Kontakt</a>
             </nav>
