@@ -1,0 +1,27 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header class="header text-center text-lg-left pb-0" style="background-color: #f8fcff">
+        <div class="container">
+          <div class="row h-100">
+
+            <div class="col-lg-5 align-self-center pb-lg-9">
+              <h1>Better Website Design; More Conversion</h1>
+              <p class="lead mt-5 mb-8">TheSaaS is an elegant, modern and fully customizable SaaS and WebApp template</p>
+              <p class="gap-xy">
+                <a class="btn btn-round btn-primary mw-150" href="#">See demos</a>
+                <a class="btn btn-round btn-secondary mw-150" href="#">Buy now</a>
+              </p>
+            </div>
+
+            <div class="col-lg-6 ml-auto align-self-end">
+              <img class="shadow-6 mt-6" src="{% static 'img/logo.png' %}" alt="img">
+            </div>
+
+          </div>
+        </div>
+    </header>
+
+{% endblock %}

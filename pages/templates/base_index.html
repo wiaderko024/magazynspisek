@@ -1,0 +1,33 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+
+        {% block title %}
+           <title>magazynspisek.pl - Demo</title>
+        {% endblock %}
+
+        <!-- Styles -->
+        <link href="{% static 'assets/css/page.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        {% include 'navbar.html' %}
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- Scripts -->
+        <script src="{% static 'assets/js/page.min.js' %}"></script>
+        <script src="{% static 'assets/js/script.js' %}"></script>
+
+    </body>
+</html>
