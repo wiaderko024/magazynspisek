@@ -1,0 +1,32 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+
+<section class="section mt-7">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 text-center mx-auto">
+                <img class="rounded-md" src="{{ author.portrait.url }}" alt="...">
+                <hr class="d-md-none my-7">
+            </div>
+            <div class="col-md-6 align-self-center text-center text-md-left">
+                <h2>{{ author.name }} {{ author.surname }}</h2>
+                <small>{{ author.department }}</small>
+                <br>
+                <p class="mt-4">{{ author.description }}</p>
+                <br>
+                <div class="social social-inline social-gray">
+                    {% if author.facebook %}
+                        <a class="social-facebook" href="#"><i class="fa fa-facebook"></i></a>
+                    {% endif %}
+                    {% if author.instagram %}
+                        <a class="social-instagram" href="#"><i class="fa fa-instagram"></i></a>
+                    {% endif %}
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
