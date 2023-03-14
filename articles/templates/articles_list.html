@@ -1,0 +1,38 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <article>
+                    <header class="text-center mb-7">
+                        <p><a class="small-4 text-lighter text-uppercase ls-2 fw-600" href="#">Artykuły</a></p>
+                        <h3>Przeczytaj nasze artykuły</h3>
+                    </header>
+                    <div class="row">
+
+                        {% for article in articles %}
+                            <div class="card-body d-flex flex-column col-md-4">
+                                <a href="#"><img class="rounded-md" src="{{ article.cover.url }}" alt="..." style="height: 350px; width: 350px;"></a>
+                                <div class="row mb-5 small-2 text-lighter">
+                                    <div class="col-auto">
+                                        <a class="text-inherit" href="{% url 'authors-details' article.author.pk %}">{{ article.author.name }} {{ article.author.surname }}</a>
+                                        <span class="align-middle px-1">•</span>
+                                        <time datetime="2018-05-15T19:00">{{ article.date }}</time>
+                                    </div>
+                                    <div class="col-auto ml-auto">
+                                        <p>{{ article.act }}</p>
+                                    </div>
+                                </div>
+                                <p class="text-justify">{{ article.description }}</p>
+                                <p class="text-center mt-auto">
+                                    <a class="btn btn-primary btn-round" href="#">Czytaj</a>
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock %}
