@@ -1,0 +1,23 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+    <main class="main-content">
+        <div class="section">
+            <div class="container">
+                <div class="text-center mt-8">
+                    <p><strong>{{ article.author.name }} {{ article.author.surname }}</strong>&#09{{ article.date }}</p>
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.act }}</p>
+                </div>
+                <div class="text-center my-8">
+                    <img class="rounded-md" src="{{ article.cover.url }}" alt="...">
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p>{{ article.article }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

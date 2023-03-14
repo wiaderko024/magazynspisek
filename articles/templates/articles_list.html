@@ -6,14 +6,13 @@
             <div class="row">
                 <article>
                     <header class="text-center mb-7">
-                        <p><a class="small-4 text-lighter text-uppercase ls-2 fw-600" href="#">Artykuły</a></p>
+                        <p class="small-4 text-lighter text-uppercase ls-2 fw-600">Artykuły</p>
                         <h3>Przeczytaj nasze artykuły</h3>
                     </header>
                     <div class="row">
-
                         {% for article in articles %}
                             <div class="card-body d-flex flex-column col-md-4">
-                                <a href="#"><img class="rounded-md" src="{{ article.cover.url }}" alt="..." style="height: 350px; width: 350px;"></a>
+                                <a href="{% url 'articles-details' article.pk %}"><img class="rounded-md" src="{{ article.cover.url }}" alt="..." style="height: 350px; width: 350px;"></a>
                                 <div class="row mb-5 small-2 text-lighter">
                                     <div class="col-auto">
                                         <a class="text-inherit" href="{% url 'authors-details' article.author.pk %}">{{ article.author.name }} {{ article.author.surname }}</a>
@@ -24,9 +23,10 @@
                                         <p>{{ article.act }}</p>
                                     </div>
                                 </div>
-                                <p class="text-justify">{{ article.description }}</p>
+                                <h3 class="text-center">{{ article.title }}</h3>
+                                <p class="text-justify mb-6">{{ article.description }}</p>
                                 <p class="text-center mt-auto">
-                                    <a class="btn btn-info btn-round" href="#">Czytaj</a>
+                                    <a class="btn btn-info btn-round" href="{% url 'articles-details' article.pk %}">Czytaj</a>
                                 </p>
                             </div>
                         {% endfor %}
