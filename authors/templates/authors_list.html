@@ -10,8 +10,8 @@
             <p class="lead">Dowiedz się więcej o naszych twórcach.</p>
         </header>
 
-        {% for author in authors %}
-            <div class="row gap-y">
+        <div class="row">
+            {% for author in authors %}
                 <div class="col-md-6 col-lg-3 team-1">
                     <a href="{% url 'authors-details' author.pk %}">
                         <img src="{{ author.portrait.url }}" alt="...">
@@ -19,8 +19,8 @@
                     </a>
                     <small>{{ author.department }}</small>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
 
     </div>
 </section>
