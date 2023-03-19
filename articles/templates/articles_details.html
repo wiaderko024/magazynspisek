@@ -5,7 +5,7 @@
         <div class="section">
             <div class="container">
                 <div class="text-center mt-8">
-                    <p>{{ article.date }}</p>
+                    <p>{{ date_pl }}</p>
                     <h2>{{ article.title }}</h2>
                     <a class="author-link" href="{% url 'authors-details' article.author.pk %}">
                         <p class="mb-0">{{ article.author.name }} {{ article.author.surname }}</p>

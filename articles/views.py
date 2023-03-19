@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from photos.models import Photo
 from .models import Article
+from .utils import MONTHS
 
 
 def articles_list(request):
@@ -14,6 +15,7 @@ def articles_details(request, pk):
     photos = Photo.objects.filter(article=article)
     context = {
         'article': article,
-        'photos': photos
+        'photos': photos,
+        'date_pl': f'{article.date.day} {MONTHS[article.date.month]} {article.date.year}'
     }
     return render(request, 'articles_details.html', context)
