@@ -5,12 +5,20 @@
         <div class="section">
             <div class="container">
                 <div class="text-center mt-8">
-                    <p><strong>{{ article.author.name }} {{ article.author.surname }}</strong>&#09{{ article.date }}</p>
+                    <p>{{ article.date }}</p>
                     <h2>{{ article.title }}</h2>
+                    <a class="author-link" href="{% url 'authors-details' article.author.pk %}">
+                        <p class="mb-0">{{ article.author.name }} {{ article.author.surname }}</p>
+                    </a>
                     <p>{{ article.act }}</p>
                 </div>
                 <div class="text-center my-8">
                     <img class="rounded-md" src="{{ article.cover.url }}" alt="...">
+                    {% if article.cover_author.pk != None %}
+                        <a class="author-link" href="{% url 'authors-details' article.cover_author.pk %}">
+                            <p>{{ article.author.name }} {{ article.author.surname }}</p>
+                        </a>
+                    {% endif %}
                 </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -23,6 +31,9 @@
                             <div class="col-md-12 mx-auto">
                                 <a class="gallery-item mx-auto" href="#">
                                     <img src="{{ photo.photo.url }}" alt="..." data-provide="lightbox">
+                                    <a href="{% url 'authors-details' photo.author.pk %}" class="author-link text-center">
+                                        <p>{{ photo.author.name }} {{ photo.author.surname }}</p>
+                                    </a>
                                 </a>
                             </div>
                         </div>

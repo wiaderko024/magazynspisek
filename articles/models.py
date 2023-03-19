@@ -7,6 +7,13 @@ class Article(models.Model):
     title = models.CharField(max_length=300, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
     cover = models.ImageField(upload_to='articles_photos', blank=False, null=False)
+    cover_author = models.ForeignKey(
+        Author,
+        on_delete=models.DO_NOTHING,
+        related_name='cover_author',
+        blank=True,
+        null=True
+    )
     date = models.DateField(blank=True, null=True)
     article = models.TextField(blank=False, null=False)
     ARTICLE_TYPES = [
