@@ -2,6 +2,8 @@ from django.db import models
 
 from authors.models import Author
 
+from ckeditor.fields import RichTextField
+
 
 class Article(models.Model):
     title = models.CharField(max_length=300, blank=False, null=False)
@@ -15,7 +17,7 @@ class Article(models.Model):
         null=True
     )
     date = models.DateField(blank=True, null=True)
-    article = models.TextField(blank=False, null=False)
+    article = RichTextField(blank=False, null=False)
     ARTICLE_TYPES = [
         ('Akt I', 'Akt I'),
         ('Akt II', 'Akt II'),
