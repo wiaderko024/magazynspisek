@@ -30,7 +30,7 @@
                                 <h3 class="text-center">{{ article.title|upper }}</h3>
                                 <p class="text-justify mb-6">{{ article.description }}</p>
                                 <p class="text-center mt-auto">
-                                    <a class="btn btn-info btn-round" href="{% url 'articles-details' article.pk %}">Czytaj</a>
+                                    <a class="btn btn-sm btn-round btn-info" style="background-color: #e2c6e7; border-color: #e2c6e7;" href="{% url 'articles-details' article.pk %}">Czytaj</a>
                                 </p>
                             </div>
                         {% endfor %}

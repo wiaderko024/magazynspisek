@@ -19,3 +19,13 @@ a.author-link:hover {
 a.author-link p {
     font-family: Calibri, sans-serif;
 }
+
+.my-button {
+    background-color: #e2c6e7;
+    border-color: #e2c6e7;
+    color: #fff;
+}
+
+.my-button:focus {
+    color: #fff;
+}
