@@ -7,7 +7,17 @@ from .utils import MONTHS
 
 def articles_list(request):
     articles = Article.objects.all().order_by('-date')
-    return render(request, 'articles_list.html', {'articles': articles})
+
+    dates = {}
+    for article in articles:
+        dates[article.pk] = f'{article.date.day} {MONTHS[article.date.month]} {article.date.year}'
+
+    context = {
+        'articles': articles,
+        'dates': dates
+    }
+
+    return render(request, 'articles_list.html', context)
 
 
 def articles_details(request, pk):

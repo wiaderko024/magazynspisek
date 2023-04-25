@@ -17,7 +17,11 @@
                                     <div class="col-auto">
                                         <a class="text-inherit" href="{% url 'authors-details' article.author.pk %}">{{ article.author.name }} {{ article.author.surname }}</a>
                                         <span class="align-middle px-1">•</span>
-                                        <time datetime="2018-05-15T19:00">{{ article.date }}</time>
+                                        {% for key, value in dates.items %}
+                                            {% if key == article.pk %}
+                                                <time datetime="2018-05-15T19:00">{{ value }}</time>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <div class="col-auto ml-auto">
                                         <p>{{ article.act }}</p>
