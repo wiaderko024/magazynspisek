@@ -7,7 +7,7 @@
                 <article>
                     <header class="text-center mb-7">
                         <p class="small-4 text-lighter text-uppercase ls-2 fw-600">Artykuły</p>
-                        <h3>Przeczytaj nasze artykuły</h3>
+                        <h3>PRZECZYTAJ NASZE ARTYKUŁY</h3>
                     </header>
                     <div class="row">
                         {% for article in articles %}
@@ -23,7 +23,7 @@
                                         <p>{{ article.act }}</p>
                                     </div>
                                 </div>
-                                <h3 class="text-center">{{ article.title }}</h3>
+                                <h3 class="text-center">{{ article.title|upper }}</h3>
                                 <p class="text-justify mb-6">{{ article.description }}</p>
                                 <p class="text-center mt-auto">
                                     <a class="btn btn-info btn-round" href="{% url 'articles-details' article.pk %}">Czytaj</a>
