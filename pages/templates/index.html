@@ -19,4 +19,25 @@
         </div>
     </header>
 
+    <main class="main-content">
+        <section class="section overflow-hidden">
+            <div class="container">
+                <div data-provide="shuffle">
+                    <div class="row gap-y gap-2 shuffle" data-shuffle="list" style="position: relative; overflow: hidden; height: 430.25px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
+                        {% for art in articles %}
+                            <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible" data-shuffle="item" data-groups="bag,box" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 500ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
+                                <a class="portfolio-1" href="{% url 'articles-details' art.pk %}">
+                                    <img src="{{ art.cover.url }}" alt="screenshot" style="height: 16.6rem; width: 16.6rem;">
+                                    <div class="portfolio-detail">
+                                        <h5>{{ art.title}}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 {% endblock %}
