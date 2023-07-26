@@ -29,3 +29,7 @@ a.author-link p {
 .my-button:focus {
     color: #fff;
 }
+
+.navbar-stick-dark.stick .logo-dark {
+    color: #323d47 !important;
+}
