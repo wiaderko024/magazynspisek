@@ -3,37 +3,44 @@
 
 {% block content %}
 
-    <header class="header text-center text-lg-left pb-0" style="background-image: url('{{ article.long_cover.url }}'); height: 100vh;">
-        <div class="container">
-          <div class="row h-100">
-
-            <div class="col-lg-5 align-self-center pb-lg-9">
-              <h1 style="color: {{ styles.h1_color }}">{{ article.title }}</h1>
-              <p class="lead mt-5 mb-5" style="color: {{ styles.color }}">{{ article.description }}</p>
-              <p class="gap-xy">
-                <a class="btn btn-round my-button mw-150" href="#">Czytaj</a>
-              </p>
-            </div>
-
-          </div>
-        </div>
-    </header>
+    {% include 'components/header.html' %}
 
     <main class="main-content">
-        <section class="section overflow-hidden">
-            <div class="container">
-                <div data-provide="shuffle">
-                    <div class="row gap-y gap-2 shuffle" data-shuffle="list" style="position: relative; overflow: hidden; height: 430.25px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
+        <section class="section">
+            <div class="container" style="height: 80vh">
+                <div data-provide="shuffle" style="margin-top: 2rem;">
+                    <div class="row gap-y gap-2 shuffle" data-shuffle="list" style="position: relative; overflow: hidden; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
                         {% for art in articles %}
-                            <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible" data-shuffle="item" data-groups="bag,box" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 500ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
+                            <div class="col-6 col-lg-4 shuffle-item shuffle-item--visible" data-shuffle="item" data-groups="bag,box" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 500ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
                                 <a class="portfolio-1" href="{% url 'articles-details' art.pk %}">
-                                    <img src="{{ art.cover.url }}" alt="screenshot" style="height: 16.6rem; width: 16.6rem;">
+                                    <img src="{{ art.cover.url }}" alt="screenshot" style="height: 22.4rem; width: 22.4rem;">
                                     <div class="portfolio-detail">
                                         <h5>{{ art.title}}</h5>
                                     </div>
                                 </a>
                             </div>
                         {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-white bg-fixed text-center" style="background-image: url({% static 'img/spisek12-02.png' %}); max-height: 24rem;" data-overlay="3">
+            <div class="container">
+                <h2 class="display-1"><strong>O nas</strong></h2>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row gap-y align-items-center" style="margin-top: 7rem;">
+                    <div class="col-md-5 mx-auto">
+                        <img class="rounded" src="{% static 'img/spisek.png' %}" alt="...">
+                    </div>
+                    <div class="col-md-6 text-center text-md-left">
+                        <h3>Magazyn spisek</h3>
+                        <p>Fusce rhoncus tincidunt elit, quis tincidunt mauris fringilla ac. Duis neque velit, tincidunt in posuere at, dignissim sed sem. Phasellus quis diam eget sapien sagittis iaculis eu ac velit. Etiam lacinia ex velit, nec lobortis est molestie sit amet. Pellentesque at elit in felis iaculis convallis. Etiam gravida leo odio, id tincidunt mi aliquam vel. Fusce malesuada ullamcorper lacus, id rhoncus est gravida sed. Mauris molestie sit amet lectus id sollicitudin.</p>
+                        <br>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,7 @@ from articles.models import Article
 
 def home_page(request):
     article = Article.objects.get(main_article=True)
-    articles = Article.objects.all().order_by('created_at')[0:8]
-
-    print(f'DEBUG -> {len(articles)}')
+    articles = Article.objects.all().order_by('date').exclude(pk=article.pk)[0:8]
 
     if article.long_cover_theme == 'dark':
         styles = {
